@@ -30,6 +30,7 @@ export default function LoginPage() {
             placeholder="username"
             value={username}
             onChange={ev => setUsername(ev.target.value)}/>
+
             <input type="password"
             placeholder="password"
             value={password}
