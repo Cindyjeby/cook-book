@@ -12,7 +12,7 @@ const secret = 'nhedwn379#$57hfnjkankajy765JNJBgky6t&*nv';
 
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
-//app.use(cookieParser());
+app.use(cookieParser());
 
 mongoose.connect('mongodb+srv://cindyjeby:DtWg6Tpp4gSXiGIW@cluster0.zr74eyq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
@@ -45,12 +45,12 @@ app.post('/login', async (req,res) => {
     }
 });
 
-//app.get('/profile', (req,res) => {
-    //const {token} = req.cookies;
-    //jwt.verify(token, secret, {}, (err,info) => {
-        //if (err) throw err;
-        //res.json(info);
-    //});
-//});
+app.get('/profile', (req,res) => {
+    const {token} = req.cookies;
+    jwt.verify(token, secret, {}, (err,info) => {
+        if (err) throw err;
+        res.json(info);
+    });
+});
 
 app.listen(4000);
