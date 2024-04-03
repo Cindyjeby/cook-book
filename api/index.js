@@ -65,6 +65,7 @@ app.post('/logout', (req,res) => {
     res.cookie('token', '').json('ok');
 });
 
+/*posting new posts */
 app.post('/post', uploadMiddleware.single('file'), async (req,res) => {
     const {originalname,path} = req.file;
     const parts = originalname.split('.');
@@ -85,6 +86,10 @@ app.post('/post', uploadMiddleware.single('file'), async (req,res) => {
         });
         res.json(postDoc);
     });
+});
+
+app.get('/post', uploadMiddleware.single('file'), async (req,res) => {
+    res.json(req.file);
 });
 
 app.get('/post', async (req,res) => {
