@@ -31,13 +31,13 @@ This was achieved by MongoDB
 git clone https://github.com/Cindyjeby/cook-book.git
 
 ### To start frontend Server
-cd cook-book/client
+cd cook-book/client \
 yarn start or npm start
 
 this will help in viewing real time updates on the site
 
 ### To start backend server
-cd cook-book/api
+cd cook-book/api \
 nodemon index.js
 
 this will also help in refreshing the updates in realtime

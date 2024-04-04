@@ -63,7 +63,7 @@ export default function EditPost() {
 
             <Editor onChange={setContent} value={content}/>
 
-            <button style={{marginTop:'5px', backgroundColor: '#677947', color: 'white'}}>Update Post</button>
+            <button style={{marginTop:'5px', backgroundColor: '#610027', color: 'white'}}>Update Post</button>
         </form>
     );
 }
