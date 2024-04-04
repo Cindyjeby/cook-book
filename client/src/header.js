@@ -14,12 +14,17 @@ export default function Header() {
     });
   }, []);
 
-  function logout() {
-    fetch('http://localhost:4000/logout', {
+  async function logout() {
+    const response = await fetch('http://localhost:4000/logout', {
       credentials: 'include',
       method: 'POST',
     });
-    setUserInfo(null);
+    if (response.ok) {
+      setUserInfo(null);
+      window.location.href = '/login';
+    } else {
+      alert('Logout failed');
+    }
   }
 
   const username = userInfo?.username;
